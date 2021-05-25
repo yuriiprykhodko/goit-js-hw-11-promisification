@@ -11,13 +11,7 @@ const delay = (ms) => {
   return promise;
 };
 
-//const logger = (time) => console.log(`Resolved after ${time}ms`);
-
-// Вызовы функции для проверки
-//delay(2000).then(logger); // Resolved after 2000ms
-//delay(1000).then(logger); // Resolved after 1000ms
-//delay(1500).then(logger); // Resolved after 1500ms
-
+//const logger = (time) => console.log(`Resolved after ${time}ms`)
 //2.Задание
 const users = [
   { name: "Mango", active: true },
@@ -41,19 +35,6 @@ const toggleUserState = (allUsers, userName) => {
 };
 
 const logger = (updatedUsers) => console.table(updatedUsers);
-
-/*
- * Сейчас работает так
- */
-//toggleUserState(users, "Mango", logger);
-//toggleUserState(users, "Lux", logger);
-
-/*
- * Должно работать так
- */
-//toggleUserState(users, "Mango").then(logger);
-//toggleUserState(users, "Lux").then(logger);
-
 //3.Задание
 const randomIntegerFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -81,21 +62,3 @@ const logSuccess = ([id, time]) => {
 const logError = (id) => {
   console.warn(`Error processing transaction ${id}. Please try again later.`);
 };
-
-/*
- * Работает так
- */
-//makeTransaction({ id: 70, amount: 150 }, logSuccess, logError);
-//makeTransaction({ id: 71, amount: 230 }, logSuccess, logError);
-//makeTransaction({ id: 72, amount: 75 }, logSuccess, logError);
-//makeTransaction({ id: 73, amount: 100 }, logSuccess, logError);
-/*
- * Должно работать так
- */
-//makeTransaction({ id: 70, amount: 150 }).then(logSuccess).catch(logError);
-
-//makeTransaction({ id: 71, amount: 230 }).then(logSuccess).catch(logError);
-
-//makeTransaction({ id: 72, amount: 75 }).then(logSuccess).catch(logError);
-
-//makeTransaction({ id: 73, amount: 100 }).then(logSuccess).catch(logError);
